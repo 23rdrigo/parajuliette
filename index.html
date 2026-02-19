@@ -77,7 +77,7 @@
     "Lo nuestro no tiene sentido como la libertad\nTenerte en mi memoria es un defecto de la eternidad",
     "Somos como ceniceros: acabamos en polvo",
     "Me & my witch, me & my witch\nDiez millones de personas y te quiero a ti",
-    "I want you to stay, I'm not gonna borrow\nI'll steal you forever, I'll take you Morocco\nMe and you together, you're drivin' me loco\nI wanna be with you, I don't wanna be solo"
+    "I want you to stay, I'm not gonna borrow\nI'll steal you forever, I'll take you Morocco\nMe and you together, you're drivin' me loco\nI wanna be with you, I don't wanna be solo",
     "En azufre su piel baño\nSuena dulce amargo\nMe seduce engaño",
     "Escribe de mí, escribe de mí",
     "te deseo",
@@ -97,9 +97,6 @@
     "2034?",
     "Eres la mejor novia que he podido encontrar...",
     "dragostea mea"
-
-  
-
   ];
 
   const images = [
@@ -110,38 +107,28 @@
     "43.jpeg", "44.jpeg", "46.jpeg", "47.jpeg", "48.jpeg", "49.jpeg", "50.jpeg"
   ];
 
-
-
   const phraseEl = document.getElementById("phrase");
   const imageEl = document.getElementById("vibeImage");
+  
+  // Hacemos que el H1 respete los saltos de línea \n
+  phraseEl.style.whiteSpace = "pre-line";
 
-  // ESTADO INICIAL ESTÁ MOSTRANDO EL TEXTO
   let showing = "text";
   imageEl.style.display = "none";
 
   function changeVibe() {
     if (showing === "text") {
-      // ocultar el texto
       phraseEl.style.display = "none";
-
-      // mostrar imagen
       imageEl.src = images[Math.floor(Math.random() * images.length)];
       imageEl.style.display = "block";
-
       showing = "image";
     } else {
-      // ocultar imagen
       imageEl.style.display = "none";
-
-      // mostrar texto
-      phraseEl.textContent =
-        phrases[Math.floor(Math.random() * phrases.length)];
+      phraseEl.textContent = phrases[Math.floor(Math.random() * phrases.length)];
       phraseEl.style.display = "block";
-
       showing = "text";
     }
   }
 </script>
-
 </body>
 </html>
