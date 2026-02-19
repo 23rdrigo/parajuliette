@@ -64,6 +64,9 @@
 
 
 <script>
+  // Añadimos la ruta de la carpeta "fotos/" a los nombres de los archivos
+  const folder = "fotos/";
+
   const phrases = [
     "Te amo mi preciosa perfecta princesa",
     "tus ojos son como los fuegos artificiales que mas ilusion tengo de ver",
@@ -91,7 +94,7 @@
     "Ella es Shakti y yo Shiva\nApuntando para el cielo",
     "Y lo entendió , y mi mente, mi mano la entendió\nY ahora tú eres tú y ahora tú eres tú sin yo. oh!",
     "Cuando ella se despertó y le dije que le quiero\nSe rió mientras acariciaba el pelo\nY me dijo que lo que había visto en aquel sueño\nEra el pasado del diablo cuando era pequeño",
-    "Vamos a dormir en ParísQue saquen Dom Pérignon, faire l'amour en Hôtel Costes",
+    "Vamos a dormir en París que saquen Dom Pérignon",
     "Hoy es el último día de nuestra vida",
     "Ojala vieramos esto juntos <3 ",
     "2034?",
@@ -99,47 +102,35 @@
     "dragostea mea"
   ];
 
+  // IMPORTANTE: Aquí he añadido "fotos/" delante de cada número
   const images = [
-    "1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg",
-    "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg", "15.jpeg", "16.jpeg", "17.jpeg", "18.jpeg", "19.jpeg", "20.jpeg",
-    "21.jpeg", "22.jpeg", "23.jpeg", "24.jpeg", "25.jpeg", "26.jpeg", "27.jpeg", "28.jpeg", "29.jpeg", "30.jpeg",
-    "32.jpeg", "33.jpeg", "34.jpeg", "35.jpeg", "36.jpeg", "37.jpeg", "38.jpeg", "39.jpeg", "41.jpeg", "42.jpeg",
-    "43.jpeg", "44.jpeg", "46.jpeg", "47.jpeg", "48.jpeg", "49.jpeg", "50.jpeg"
+    "fotos/1.jpeg", "fotos/2.jpeg", "fotos/3.jpeg", "fotos/4.jpeg", "fotos/5.jpeg", "fotos/6.jpeg", "fotos/7.jpeg", "fotos/8.jpeg", "fotos/9.jpeg", "fotos/10.jpeg",
+    "fotos/11.jpeg", "fotos/12.jpeg", "fotos/13.jpeg", "fotos/14.jpeg", "fotos/15.jpeg", "fotos/16.jpeg", "fotos/17.jpeg", "fotos/18.jpeg", "fotos/19.jpeg", "fotos/20.jpeg",
+    "fotos/21.jpeg", "fotos/22.jpeg", "fotos/23.jpeg", "fotos/24.jpeg", "fotos/25.jpeg", "fotos/26.jpeg", "fotos/27.jpeg", "fotos/28.jpeg", "fotos/29.jpeg", "fotos/30.jpeg",
+    "fotos/32.jpeg", "fotos/33.jpeg", "fotos/34.jpeg", "fotos/35.jpeg", "fotos/36.jpeg", "fotos/37.jpeg", "fotos/38.jpeg", "fotos/39.jpeg", "fotos/41.jpeg", "fotos/42.jpeg",
+    "fotos/43.jpeg", "fotos/44.jpeg", "fotos/46.jpeg", "fotos/47.jpeg", "fotos/48.jpeg", "fotos/49.jpeg", "fotos/50.jpeg"
   ];
 
   const phraseEl = document.getElementById("phrase");
   const imageEl = document.getElementById("vibeImage");
   
-  // Hacemos que el H1 respete los saltos de línea \n
   phraseEl.style.whiteSpace = "pre-line";
 
   let showing = "text";
   imageEl.style.display = "none";
 
-function changeVibe() {
+  function changeVibe() {
     if (showing === "text") {
-      // 1. Ocultar el texto
       phraseEl.style.display = "none";
-
-      // 2. Elegir imagen aleatoria
       const randomImage = images[Math.floor(Math.random() * images.length)];
-      
-      // 3. Actualizar y mostrar
       imageEl.src = randomImage;
       imageEl.style.display = "block";
-
       showing = "image";
     } else {
-      // 1. Ocultar imagen
       imageEl.style.display = "none";
-
-      // 2. Elegir frase aleatoria
       const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-      
-      // 3. Actualizar y mostrar
       phraseEl.textContent = randomPhrase;
       phraseEl.style.display = "block";
-
       showing = "text";
     }
   }
