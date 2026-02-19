@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" type="image/png" href="1.JPG">
+  <title>juliette</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #C43F79;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Tahoma";
+      font-style: normal;
+      color: #3F8AC4;
+      cursor: pointer;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+      padding: 24px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+    }
+
+    img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    p {
+      margin-top: 10px;
+      opacity: 0.6;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+
+<body onclick="changeVibe()">
+  <div class="container">
+  <img id="vibeImage" src="1.jpeg" alt="vibe image" />
+  <h1 id="phrase">FELIZ SAN VALENTIN MI PRECIOSA PERFECTA PRINCESA <3 </h1>
+</div>
+
+
+<script>
+  const phrases = [
+    "Te amo mi preciosa perfecta princesa",
+    "tus ojos son como los fuegos artificiales que mas ilusion tengo de ver",
+    "No hace falta que me digáis eso de que perdéis la cabeza\npor eso de que sus caderas…\nya sé de sobra que tiene esa sonrisa\ny esas maneras\ny todo el remolino que forma en cada paso de gesto que da.\n\nPero además la he visto seria ser ella misma\ny en serio que eso no se puede escribir en un poema.\nPor eso, eso que me cuentas de que mírala cómo bebe las cervezas\ny cómo se revuelve sobre las baldosas\ny qué fácil parece a veces enamorarse.\n\nTodo eso de que ella puede llegar a ser ese puto único motivo\nde seguir vivo y a la mierda con la autodestrucción…\ntodo eso de que los besos de ciertas bocas saben mejor es un cuento que me sé desde el día que me dio dos besos y me dijo su nombre.\n\nPero no sabes lo que es caer desde un precipicio y que ella aparezca de golpe y de frente\npara decirte: «venga, hazte un peta y me lo cuentas».\nNo sabes lo que es despertarte y que ella se retuerza y bostece,\nluego te abrace,\ny luego no sepas cómo deshacerte de todo el mundo.\n\nAsí que supondrás que yo soy el primero que entiende\nel que pierdas la cabeza por sus piernas\ny el sentido por sus palabras\ny los huevos por un mínimo roce de mejilla.\n\nQue las suspicacias,\nlos disimulos cuando su culo pasa,\nlas incomodidades de orgullo que pueda provocarte\nson algo con lo que ya cuento.\n\nQuiero decir que a mí de versos no me tienes que decir nada,\nque hace tiempo que escribo los míos.\nQue yo también la veo.\nQue cuando ella cruza por debajo del cielo solo el tonto mira al cielo.\n\nQue sé cómo agacha la cabeza, levanta la mirada y se muerde el labio superior.\nQue conozco su voz en formato susurro\ny formato gemido\ny en formato secreto.\n\nQue me sé sus cicatrices\ny el sitio que la tienes que tocar en el este de su pie izquierdo para conseguir que se ría,\ny me sé lo de sus rodillas\ny la forma que rozar las cuerdas de una guitarra.\n\nQue yo también he memorizado su número de teléfono\npero también el número de sus escalones\ny el número de veces que afina las cuerdas antes de ahorcarse por bulerías.\n\nQue no solo conozco su última pesadilla,\ntambién las mil anteriores,\ny yo sí que no tengo cojones a decirla que no a nada\nporque tengo más deudas con su espalda\nde las que nadie tendrá jamás con la luna.\n\nQue sé la cara que pone cuando se deja ser completamente ella,\nrendida a ese puto milagro que supone que exista.\nQue la he visto volar por encima de poetas que valían mucho más que estos dedos,\ny la he visto formar un charco de arena rompiendo todos los relojes,\ny la he visto hacerle competencia a cualquier amanecer: no me hablen de paisajes si no han visto su cuerpo.\n\nQue te entiendo.\nQue yo escribo sobre lo mismo.\nSobre la misma.\nQue razones tenemos todos.\nPero yo...\nmuchas más que vosotros.",
+    "Cuando tu sonries se que me prefieres",
+    "Para aquella que acaricia mis monstruos como si fueran gatos",
+    "Nmout 3lik",
+    "No puedo morir mientras te beso",
+    "Somos el secreto a voces en los oídos de los sordo",
+    "No me recuerden lo que soy, hazme olvidar lo que fui",
+    "Lo nuestro no tiene sentido como la libertad\nTenerte en mi memoria es un defecto de la eternidad",
+    "Somos como ceniceros: acabamos en polvo",
+    "Me & my witch, me & my witch\nDiez millones de personas y te quiero a ti",
+    "I want you to stay, I'm not gonna borrow\nI'll steal you forever, I'll take you Morocco\nMe and you together, you're drivin' me loco\nI wanna be with you, I don't wanna be solo"
+    "En azufre su piel baño\nSuena dulce amargo\nMe seduce engaño",
+    "Escribe de mí, escribe de mí",
+    "te deseo",
+    "te amo",
+    "te iubesk",
+    "Unas flores amarillas\nPa' acordarse de su pelo",
+    "Más, más, más, más, más, dame más",
+    "Ojalá que se llame Amapola\nQue me coja la mano y me diga que sola\nNo comprende la vida",
+    "Yo me pongo palote, sólo con que me toque",
+    "Quédate muy cerca de mí\nY así los dos, dulce madrugada\nMírame y vuelve a sonreír\nQue si no yo no comprendo nada",
+    "Ella es Shakti y yo Shiva\nApuntando para el cielo",
+    "Y lo entendió , y mi mente, mi mano la entendió\nY ahora tú eres tú y ahora tú eres tú sin yo. oh!",
+    "Cuando ella se despertó y le dije que le quiero\nSe rió mientras acariciaba el pelo\nY me dijo que lo que había visto en aquel sueño\nEra el pasado del diablo cuando era pequeño",
+    "Vamos a dormir en ParísQue saquen Dom Pérignon, faire l'amour en Hôtel Costes",
+    "Hoy es el último día de nuestra vida",
+    "Ojala vieramos esto juntos <3 ",
+    "2034?",
+    "Eres la mejor novia que he podido encontrar...",
+    "dragostea mea"
+
+  
+
+  ];
+
+  const images = [
+    "1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg",
+    "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg", "15.jpeg", "16.jpeg", "17.jpeg", "18.jpeg", "19.jpeg", "20.jpeg",
+    "21.jpeg", "22.jpeg", "23.jpeg", "24.jpeg", "25.jpeg", "26.jpeg", "27.jpeg", "28.jpeg", "29.jpeg", "30.jpeg",
+    "32.jpeg", "33.jpeg", "34.jpeg", "35.jpeg", "36.jpeg", "37.jpeg", "38.jpeg", "39.jpeg", "41.jpeg", "42.jpeg",
+    "43.jpeg", "44.jpeg", "46.jpeg", "47.jpeg", "48.jpeg", "49.jpeg", "50.jpeg"
+  ];
+
+
+
+  const phraseEl = document.getElementById("phrase");
+  const imageEl = document.getElementById("vibeImage");
+
+  // ESTADO INICIAL ESTÁ MOSTRANDO EL TEXTO
+  let showing = "text";
+  imageEl.style.display = "none";
+
+  function changeVibe() {
+    if (showing === "text") {
+      // ocultar el texto
+      phraseEl.style.display = "none";
+
+      // mostrar imagen
+      imageEl.src = images[Math.floor(Math.random() * images.length)];
+      imageEl.style.display = "block";
+
+      showing = "image";
+    } else {
+      // ocultar imagen
+      imageEl.style.display = "none";
+
+      // mostrar texto
+      phraseEl.textContent =
+        phrases[Math.floor(Math.random() * phrases.length)];
+      phraseEl.style.display = "block";
+
+      showing = "text";
+    }
+  }
+</script>
+
+</body>
+</html>
