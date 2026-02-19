@@ -116,16 +116,30 @@
   let showing = "text";
   imageEl.style.display = "none";
 
-  function changeVibe() {
+function changeVibe() {
     if (showing === "text") {
+      // 1. Ocultar el texto
       phraseEl.style.display = "none";
-      imageEl.src = images[Math.floor(Math.random() * images.length)];
+
+      // 2. Elegir imagen aleatoria
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+      
+      // 3. Actualizar y mostrar
+      imageEl.src = randomImage;
       imageEl.style.display = "block";
+
       showing = "image";
     } else {
+      // 1. Ocultar imagen
       imageEl.style.display = "none";
-      phraseEl.textContent = phrases[Math.floor(Math.random() * phrases.length)];
+
+      // 2. Elegir frase aleatoria
+      const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+      
+      // 3. Actualizar y mostrar
+      phraseEl.textContent = randomPhrase;
       phraseEl.style.display = "block";
+
       showing = "text";
     }
   }
